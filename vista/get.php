@@ -17,53 +17,39 @@
             color: #fff;
         }
 
-        input[type="text"],
-        input[type="password"] {
-            width: 95%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            background-color: #555;
+        .section {
+            background-color: #333;
             color: #fff;
-            border-radius: 3px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
         }
 
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background-color: #007bff;
+        .btn_form {
+            background-color: #333;
             color: #fff;
-            border-radius: 3px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        .register-link {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-
-        .register-link:hover {
-            text-decoration: underline;
+        /* Estilo al pasar el mouse por encima */
+        .btn_form:hover {
+            background-color: #555;
+            /* Color de fondo más oscuro al pasar el mouse */
         }
     </style>
 
 </head>
 
 <body>
-    <header>
+<header>
         <nav class="navbar">
-            <img src="../src/img/toyota.jpg" alt="LOGO">
+           <img src="../src/img/toyota.jpg" alt="LOGO">
             <ul>
                 <li><a href="../vista/index.php">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="../vista/get.php">Get</a></li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
@@ -72,14 +58,14 @@
     <div class="container-querry">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="text" id="miCampoTexto" name="texto">
-            <select id="miSelect" name=" opcion">
+            <select id="miSelect" name="opcion" class="section">
                 <option value="NAME">Nombre</option>
                 <option value="LASTNAME">Apellido</option>
                 <option value="AGE">Edad</option>
                 <option value="JOURNEY">Jornada</option>
                 <option value="SEMESTER">Semestre</option>
             </select>
-            <button type="submit" name="llamar_funcion">Llamar a la función PHP</button>
+            <button type="submit" name="btn_querry" class="btn_form">Consultar</button>
         </form>
 
     </div>
@@ -92,7 +78,7 @@
         $res = $conectar->query($sqlquerry) or die(mysqli_error($conectar));
         pintar($res);
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['llamar_funcion'])) {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn_querry'])) {
             check($conectar);
             $valor;
 

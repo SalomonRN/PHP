@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Bienvenida - Tema Noche</title>
+    <title>Página de Bienvenida</title>
+<link rel="stylesheet" href="../style.css">
     <style>
         body {
             background-color: #111;
@@ -38,6 +39,7 @@
             padding: 10px 20px;
             border-radius: 3px;
             cursor: pointer;
+            text-decoration:none;
         }
 
         .logout-button:hover {
@@ -46,6 +48,17 @@
     </style>
 </head>
 <body>
+<header>
+        <nav class="navbar">
+           <img src="../src/img/toyota.jpg" alt="LOGO">
+            <ul>
+                <li><a href="../vista/index.php">Inicio</a></li>
+                <li><a href="../vista/get.php">Get</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <h1>Bienvenido</h1>
         <p>¡Has iniciado sesión con éxito!</p>
